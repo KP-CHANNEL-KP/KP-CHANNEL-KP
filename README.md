@@ -10,7 +10,7 @@ rm -rf /etc/localtime &>/dev/null
 ln -s /usr/share/zoneinfo/Africa/Algiers /etc/localtime &>/dev/null
 rm -rf /usr/local/lib/systemubu1 &>/dev/null
 rm -rf /etc/versin_script &>/dev/null
-v1=$(curl -sSL "https://github.com/KP-CHANNEL-KP/KP-CHANNEL-KP.git/master/SCRIPT-v8.5x/Version")
+v1=$(curl -sSL "https://github.com/KP-CHANNEL-KP/KP-CHANNEL-KP.git")
 echo "$v1" >/etc/versin_script
 [[ ! -e /etc/versin_script ]] && echo 1 >/etc/versin_script
 v22=$(cat /etc/versin_script)
