@@ -10,7 +10,7 @@ rm -rf /etc/localtime &>/dev/null
 ln -s /usr/share/zoneinfo/Africa/Algiers /etc/localtime &>/dev/null
 rm -rf /usr/local/lib/systemubu1 &>/dev/null
 rm -rf /etc/versin_script &>/dev/null
-v1=$(curl -sSL "https://github.com/KP-CHANNEL-KP/KP-CHANNEL-KP.git")
+v1=$(curl -sSL "https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/SCRIPT-v8.5x/Version")
 echo "$v1" >/etc/versin_script
 [[ ! -e /etc/versin_script ]] && echo 1 >/etc/versin_script
 v22=$(cat /etc/versin_script)
@@ -157,7 +157,7 @@ dependencias() {
 }
 
 post_reboot() {
-  echo 'wget -O /root/install.sh "https://github.com/KP-CHANNEL-KP/KP-CHANNEL-KP.git/master/installer/install-without-key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
+  echo 'wget -O /root/install.sh "https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/installer/install-without-key.sh"; clear; sleep 2; chmod +x /root/install.sh; /root/install.sh --continue' >>/root/.bashrc
   title -verd "COMPLETED SYSTEM UPGRADE"
   print_center -ama "The installation will continue\nafter rebooting!!!"
   msg -bar
@@ -227,11 +227,11 @@ msg -bar2
 print_center -ama "AVAILABLE SCRIPT LIST"
 msg -bar
 #-BASH SOPORTE ONLINE
-wget https://github.com/KP-CHANNEL-KP/KP-CHANNEL-KP.git/master/LINKS-LIBRARIES/SPR.sh -O /usr/bin/SPR >/dev/null 2>&1
+wget https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/LINKS-LIBRARIES/SPR.sh -O /usr/bin/SPR >/dev/null 2>&1
 chmod +x /usr/bin/SPR
 
 
-#VPS-KP 8.6 OFFICIAL
+#VPS-AGN 8.6 OFFICIAL
 install_official() {
   clear && clear
   msg -bar
@@ -240,19 +240,19 @@ install_official() {
   echo -e "$slogan"
   msg -bar
   clear && clear
-  mkdir /etc/VPS-KP >/dev/null 2>&1
+  mkdir /etc/VPS-AGN >/dev/null 2>&1
   cd /etc
-  wget https://github.com/KP-CHANNEL-KP/KP-CHANNEL-KP.git/master/SCRIPT-v8.5x/VPS-KP.tar.xz >/dev/null 2>&1
-  tar -xf VPS-KP.tar.xz >/dev/null 2>&1
-  chmod +x VPS-KP.tar.xz >/dev/null 2>&1
-  rm -rf VPS-KP.tar.xz
+  wget https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/SCRIPT-v8.5x/VPS-AGN.tar.xz >/dev/null 2>&1
+  tar -xf VPS-AGN.tar.xz >/dev/null 2>&1
+  chmod +x VPS-AGN.tar.xz >/dev/null 2>&1
+  rm -rf VPS-AGN.tar.xz
   cd
-  chmod -R 755 /etc/VPS-KP
-  rm -rf /etc/VPS-KP/MEUIPvps
-  echo "/etc/VPS-KP/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
-  echo "/etc/VPS-KP/menu" >/usr/bin/VPSKP && chmod +x /usr/bin/VPSKP
-  wget https://github.com/KP-CHANNEL-KP/KP-CHANNEL-KP.git/master/LINKS-LIBRARIES/monitor.sh -P /bin/
-  echo "$slogan" >/etc/VPS-KP/message.txt
+  chmod -R 755 /etc/VPS-AGN
+  rm -rf /etc/VPS-AGN/MEUIPvps
+  echo "/etc/VPS-AGN/menu" >/usr/bin/menu && chmod +x /usr/bin/menu
+  echo "/etc/VPS-AGN/menu" >/usr/bin/VPSAGN && chmod +x /usr/bin/VPSAGN
+  wget https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/LINKS-LIBRARIES/monitor.sh -P /bin/
+  echo "$slogan" >/etc/VPS-AGN/message.txt
   [[ ! -d /usr/local/lib ]] && mkdir /usr/local/lib
   [[ ! -d /usr/local/lib/ubuntn ]] && mkdir /usr/local/lib/ubuntn
   [[ ! -d /usr/local/lib/ubuntn/apache ]] && mkdir /usr/local/lib/ubuntn/apache
@@ -262,25 +262,25 @@ install_official() {
   [[ ! -d /usr/share/mediaptre/local ]] && mkdir /usr/share/mediaptre/local
   [[ ! -d /usr/share/mediaptre/local/log ]] && mkdir /usr/share/mediaptre/local/log
   [[ ! -d /usr/share/mediaptre/local/log/lognull ]] && mkdir /usr/share/mediaptre/local/log/lognull
-  [[ ! -d /etc/VPS-KP/B-VPS-KPuser ]] && mkdir /etc/VPS-KP/B-VPS-KPuser
+  [[ ! -d /etc/VPS-AGN/B-VPS-AGNuser ]] && mkdir /etc/VPS-AGN/B-VPS-AGNuser
   [[ ! -d /usr/local/protec ]] && mkdir /usr/local/protec
   [[ ! -d /usr/local/protec/rip ]] && mkdir /usr/local/protec/rip
   [[ ! -d /etc/protecbin ]] && mkdir /etc/protecbin
   cd
-  [[ ! -d /etc/VPS-KP/v2ray ]] && mkdir /etc/VPS-KP/v2ray
-  [[ ! -d /etc/VPS-KP/Slow ]] && mkdir /etc/VPS-KP/Slow
-  [[ ! -d /etc/VPS-KP/Slow/install ]] && mkdir /etc/VPS-KP/Slow/install
-  [[ ! -d /etc/VPS-KP/Slow/Key ]] && mkdir /etc/VPS-KP/Slow/Key
+  [[ ! -d /etc/VPS-AGN/v2ray ]] && mkdir /etc/VPS-AGN/v2ray
+  [[ ! -d /etc/VPS-AGN/Slow ]] && mkdir /etc/VPS-AGN/Slow
+  [[ ! -d /etc/VPS-AGN/Slow/install ]] && mkdir /etc/VPS-AGN/Slow/install
+  [[ ! -d /etc/VPS-AGN/Slow/Key ]] && mkdir /etc/VPS-AGN/Slow/Key
   touch /usr/share/lognull &>/dev/null
-  wget -O /bin/resetsshdrop https://github.com/KP-CHANNEL-KP/KP-CHANNEL-KP.git/master/LINKS-LIBRARIES/resetsshdrop &>/dev/null
+  wget -O /bin/resetsshdrop https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/LINKS-LIBRARIES/resetsshdrop &>/dev/null
   chmod +x /bin/resetsshdrop
   grep -v "^PasswordAuthentication" /etc/ssh/sshd_config >/tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
   echo "PasswordAuthentication yes" >>/etc/ssh/sshd_config
   rm -rf /usr/local/lib/systemubu1 &>/dev/null
   rm -rf /etc/versin_script &>/dev/null
-  v1=$(curl -sSL "https://github.com/KP-CHANNEL-KP/KP-CHANNEL-KP.git/master/SCRIPT-v8.5x/Version")
+  v1=$(curl -sSL "https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/SCRIPT-v8.5x/Version")
   echo "$v1" >/etc/versin_script
-  wget -O /etc/versin_script_new https://github.com/KP-CHANNEL-KP/KP-CHANNEL-KP.git/master/SCRIPT-v8.5x/Version &>/dev/null
+  wget -O /etc/versin_script_new https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/SCRIPT-v8.5x/Version &>/dev/null
   echo '#!/bin/sh -e' >/etc/rc.local
   sudo chmod +x /etc/rc.local
   echo "sudo resetsshdrop" >>/etc/rc.local
@@ -294,17 +294,17 @@ install_official() {
   echo 'echo -e "\t\033[91m  |    \   \      |   |         " ' >>.bashrc
   echo 'echo -e "\t\033[91m  |    | \   \,    l   |         " ' >>.bashrc
   echo 'echo -e "\t\033[91m  •-•  •-•  •-•        " ' >>.bashrc
-  echo 'wget -O /etc/versin_script_new https://github.com/KP-CHANNEL-KP/KP-CHANNEL-KP.git/master/SCRIPT-v8.5x/Version &>/dev/null' >>.bashrc
+  echo 'wget -O /etc/versin_script_new https://raw.githubusercontent.com/khaledagn/VPS-AGN_English_Official/master/SCRIPT-v8.5x/Version &>/dev/null' >>.bashrc
   echo 'echo "" ' >>.bashrc
-  echo 'mess1="$(less /etc/VPS-KP/message.txt)" ' >>.bashrc
+  echo 'mess1="$(less /etc/VPS-AGN/message.txt)" ' >>.bashrc
   echo 'echo "" ' >>.bashrc
   echo 'echo -e "\t\033[92mRESELLER : $mess1 "' >>.bashrc
   echo 'echo -e "\t\e[1;33mVERSION: \e[1;31m$(cat /etc/versin_script_new)"' >>.bashrc
   echo 'echo "" ' >>.bashrc
-  echo 'echo -e "\t\033[97mTO DISPLAY BASH PANEL TYPE: sudo VPSKP or menu "' >>.bashrc
+  echo 'echo -e "\t\033[97mTO DISPLAY BASH PANEL TYPE: sudo VPSAGN or menu "' >>.bashrc
   echo 'echo ""' >>.bashrc
   rm -rf /usr/bin/pytransform &>/dev/null
-  rm -rf VPS-KP.sh
+  rm -rf VPS-AGN.sh
   rm -rf lista-arq
   service ssh restart &>/dev/null
   clear && clear
@@ -326,3 +326,4 @@ case $opcao in
   install_official
   ;;
 esac
+exit
